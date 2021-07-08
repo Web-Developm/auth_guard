@@ -1,0 +1,55 @@
+.logout{
+  background-color:#064420;
+}
+
+.button_size{
+ color: #fff;
+ margin-left:1400px;
+ font-size: 18px;
+}
+
+@media screen and (max-width:1020px){
+  .button-size{
+    color:#fff;
+    margin-left:500px;
+  }
+}
+
+
+.form{
+  margin:0px;
+  height:95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets//images/pexels-luis-dalvan-1770809.jpg');
+  background-position: bottom center;
+  background-size: cover;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.form-fields{
+  width: 400px;
+  max-width: 400px;
+  margin:1rem;
+  padding:2rem;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  background:#ffff;
+}
+
+.sign mat-form-field{
+  display: block;
+}
+
+.button{
+  padding:10px;
+}
+
+.content{
+  padding-top: 10px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}

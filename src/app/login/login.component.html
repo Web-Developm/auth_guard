@@ -1,0 +1,47 @@
+<div class="logout">
+  <button (click)="logout()" mat-button color="primary" class="button-size">Logout</button>
+</div>
+
+<div class="form">
+  <div class="container form-fields">
+
+    <h1 class="text-center">Already a member?</h1>
+    <p class="text-center">Sign in to your account</p>
+
+    <form [formGroup]="login" (ngSubmit)="onSubmit()">
+      <div class="row">
+
+        <div class="col-sm-12 login">
+          <mat-form-field appearance="standard">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="User Name" formControlName="username">
+            <mat-error *ngIf="login.controls['username'].invalid">{{getuser_name()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-12 login">
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide? 'password': 'text'" placeholder="Password" formControlName="password"
+              autocomplete="on">
+            <a mat-icon-button matSuffix (click)="hide =!hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </a>
+            <mat-error *ngIf="login.controls['password'].invalid">{{getpassword()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="button">
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+
+      <div class="content">
+        Don't have an account? <a routerLink="/signup">Sign Up</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="logout">
+  <button mat-button color="primary" class="button_size">Logout</button>
+</div>
+
+
+
+<div class="form">
+  <div class="container-fluid form-fields">
+
+    <h1 class="text-center">Sign Up</h1>
+    <p></p>
+
+    <form [formGroup]="user" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+        <div class="col-12 sign">
+          <mat-form-field appearance="standard">
+            <mat-label>Id</mat-label>
+            <input matInput formControlName="id" required #message>
+            <mat-error *ngIf="user.controls['id'].invalid">{{getid()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sign">
+          <mat-form-field appearance="standard">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required #action>
+            <mat-error *ngIf="user.controls['name'].invalid">{{getname()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sign">
+          <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="user.controls['email'].invalid">{{getemail()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sign">
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required autocomplete="on">
+            <a mat-icon-button matSuffix (click)="hide=!hide" [attr.aria.label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </a>
+            <mat-error *ngIf="user.controls['password'].invalid">{{getpassword()}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 sign">
+          <mat-form-field appearance="standard">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm_password" required
+              autocomplete="on">
+            <mat-error *ngIf="user.controls['confirm_password'].invalid">{{getconfirm_password()}}</mat-error>
+            <a mat-icon-button matSuffix (click)="hide=!hide" [attr.aria.label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </a>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="text-center button">
+        <button (click)="send()" mat-raised-button color="primary">Creat
+          Account</button>
+      </div>
+
+      <div class="content">
+        Already have an account? <a routerLink="/login">Login</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
